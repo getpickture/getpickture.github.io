@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>pickture – Filme &amp; Serien finden</title>
+<meta name="description" content="pickture empfiehlt dir Filme und Serien von deinen Streamingdiensten – und findet per Swipe mit Freunden, was ihr heute schaut.">
+<meta property="og:title" content="pickture – Filme & Serien">
+<meta property="og:description" content="Empfehlungen nur von deinen Streamingdiensten. Gemeinsam swipen, Match finden.">
+<meta property="og:image" content="https://getpickture.github.io/icon.png">
+<meta name="theme-color" content="#6D5DFC">
 <link rel="icon" href="./icon.png">
 <link rel="stylesheet" href="./style.css">
 <script>(function () {
@@ -26,7 +31,7 @@
   });
 })();</script>
 </head>
-<body>
+<body class="home">
 <main>
   <header>
     <a class="brand" href="./"><img src="./icon.png" alt="" width="36" height="36"><span>pick<b>ture</b></span></a>
@@ -34,15 +39,93 @@
       <select id="lang" onchange="setLang(this.value)" aria-label="Language / Sprache"><option value="en">English</option><option value="de">Deutsch</option></select>
     </label>
   </header>
-  <section lang="de" class="hero">
-    <h1>Was schauen wir heute?</h1>
-    <p class="lead">pickture empfiehlt dir Filme und Serien – nur von den Streamingdiensten, die du wirklich hast. Bewerte, was du gesehen hast, folge Freunden und findet per Swipe in der Lobby gemeinsam heraus, was ihr schaut.</p>
-    <p class="soon">Bald im App Store und bei Google Play.</p>
+  <section lang="de">
+    <div class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Filme & Serien – gemeinsam entscheiden</p>
+        <h1>Was schauen wir heute?</h1>
+        <p class="lead">pickture empfiehlt dir Filme und Serien, die du mit deinen Abos wirklich schauen kannst – und findet per Swipe mit Freunden in Sekunden den Film für heute Abend.</p>
+        <div class="badge"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.6 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.7zM14.1 5.6c.6-.8 1.1-1.8 1-2.9-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.7-1 2.8 1 .1 2.1-.5 2.7-1.3z"/></svg><span><b>Bald im App Store</b><small>Android folgt kurz danach</small></span></div>
+      </div>
+      <div class="phone" aria-hidden="true">
+        <div class="screen">
+          <div class="notch"></div>
+          <div class="card card-back"></div>
+          <div class="card card-front">
+            <div class="card-badge">8,5</div>
+            <div class="card-lines"><span></span><span></span></div>
+          </div>
+          <div class="match">Match!</div>
+          <div class="actions"><span class="no">✕</span><span class="yes">♥</span></div>
+        </div>
+      </div>
+    </div>
+    <h2 class="center">Alles, was du für den Filmabend brauchst</h2>
+    <div class="features">
+      <div class="feature"><div class="ic"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z"/></svg></div><h3>Empfehlungen, die passen</h3><p>Bewerte, was du gesehen hast – pickture lernt deinen Geschmack und schlägt passende Titel vor.</p></div>
+      <div class="feature"><div class="ic"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2.5"/><path d="M8 20h8"/></svg></div><h3>Nur deine Dienste</h3><p>Über 100 Länder und alle großen Streamingdienste. Du siehst nur, was du auch schauen kannst.</p></div>
+      <div class="feature"><div class="ic"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="10" height="15" rx="2.5"/><path d="M17 7l3 3-3 3M14 10h6"/></svg></div><h3>Lobby mit Swipe</h3><p>Code teilen, gemeinsam wischen – sobald alle nach rechts swipen, habt ihr ein Match.</p></div>
+      <div class="feature"><div class="ic"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.8-3.2 3-5 5.5-5s4.7 1.8 5.5 5"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.3.2 4 1.8 4.5 4.8"/></svg></div><h3>Freunde & Feed</h3><p>Sieh, was deine Freunde bewerten und sich merken, und vergleicht euren Geschmack.</p></div>
+      <div class="feature"><div class="ic"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 16V11a6 6 0 1112 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 004 0"/></svg></div><h3>Merkliste mit Erinnerung</h3><p>Kommt ein gemerkter Titel auf einen deiner Dienste, sagt dir pickture Bescheid.</p></div>
+      <div class="feature"><div class="ic"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg></div><h3>In 20 Sprachen</h3><p>Für iPhone und iPad, hell oder dunkel – kostenlos und ohne Werbung.</p></div>
+    </div>
+    <h2 class="center">So funktioniert die Lobby</h2>
+    <ol class="steps">
+      <li><span class="num">1</span><h3>Lobby erstellen</h3><p>Ein Tipp – und du bekommst einen Code.</p></li>
+      <li><span class="num">2</span><h3>Freunde einladen</h3><p>Code teilen oder Freunde direkt einladen.</p></li>
+      <li><span class="num">3</span><h3>Swipen & matchen</h3><p>Rechts heißt ja. Wenn alle wollen: Match.</p></li>
+    </ol>
+    <h2 class="center">Häufige Fragen</h2>
+    <div class="faq">
+      <details><summary>Kostet pickture etwas?</summary><p>Nein. pickture ist kostenlos und ohne Werbung.</p></details>
+      <details><summary>Welche Streamingdienste werden unterstützt?</summary><p>Alle großen Dienste in über 100 Ländern – die Verfügbarkeiten kommen von JustWatch.</p></details>
+      <details><summary>Was passiert mit meinen Daten?</summary><p>Nur das Nötigste wird gespeichert, kein Tracking, keine Werbung. Details in der <a href="datenschutz/">Datenschutzerklärung</a>.</p></details>
+    </div>
+    <p class="credit">Filmdaten: The Movie Database (TMDB) · Verfügbarkeiten: JustWatch. pickture wird nicht von TMDB unterstützt oder zertifiziert.</p>
   </section>
-  <section lang="en" class="hero">
-    <h1>What are we watching tonight?</h1>
-    <p class="lead">pickture recommends movies and shows – only from the streaming services you actually have. Rate what you’ve watched, follow friends and swipe together in a lobby to decide what to watch.</p>
-    <p class="soon">Coming soon to the App Store and Google Play.</p>
+  <section lang="en">
+    <div class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Movies & shows – decide together</p>
+        <h1>What are we watching tonight?</h1>
+        <p class="lead">pickture recommends movies and shows you can actually watch with your subscriptions – and swipes with your friends to find tonight’s movie in seconds.</p>
+        <div class="badge"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.6 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.7zM14.1 5.6c.6-.8 1.1-1.8 1-2.9-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.7-1 2.8 1 .1 2.1-.5 2.7-1.3z"/></svg><span><b>Coming soon to the App Store</b><small>Android shortly after</small></span></div>
+      </div>
+      <div class="phone" aria-hidden="true">
+        <div class="screen">
+          <div class="notch"></div>
+          <div class="card card-back"></div>
+          <div class="card card-front">
+            <div class="card-badge">8,5</div>
+            <div class="card-lines"><span></span><span></span></div>
+          </div>
+          <div class="match">Match!</div>
+          <div class="actions"><span class="no">✕</span><span class="yes">♥</span></div>
+        </div>
+      </div>
+    </div>
+    <h2 class="center">Everything you need for movie night</h2>
+    <div class="features">
+      <div class="feature"><div class="ic"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z"/></svg></div><h3>Recommendations that fit</h3><p>Rate what you’ve watched – pickture learns your taste and suggests titles you’ll love.</p></div>
+      <div class="feature"><div class="ic"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2.5"/><path d="M8 20h8"/></svg></div><h3>Only your services</h3><p>Over 100 countries and all major streaming services. You only see what you can actually watch.</p></div>
+      <div class="feature"><div class="ic"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="10" height="15" rx="2.5"/><path d="M17 7l3 3-3 3M14 10h6"/></svg></div><h3>Swipe lobby</h3><p>Share a code, swipe together – as soon as everyone swipes right, it’s a match.</p></div>
+      <div class="feature"><div class="ic"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.8-3.2 3-5 5.5-5s4.7 1.8 5.5 5"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.3.2 4 1.8 4.5 4.8"/></svg></div><h3>Friends & feed</h3><p>See what your friends rate and save, and compare your taste.</p></div>
+      <div class="feature"><div class="ic"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 16V11a6 6 0 1112 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 004 0"/></svg></div><h3>Watchlist alerts</h3><p>When a saved title arrives on one of your services, pickture lets you know.</p></div>
+      <div class="feature"><div class="ic"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg></div><h3>In 20 languages</h3><p>For iPhone and iPad, light or dark – free and without ads.</p></div>
+    </div>
+    <h2 class="center">How the lobby works</h2>
+    <ol class="steps">
+      <li><span class="num">1</span><h3>Create a lobby</h3><p>One tap and you get a code.</p></li>
+      <li><span class="num">2</span><h3>Invite friends</h3><p>Share the code or invite friends directly.</p></li>
+      <li><span class="num">3</span><h3>Swipe & match</h3><p>Right means yes. When everyone agrees: match.</p></li>
+    </ol>
+    <h2 class="center">FAQ</h2>
+    <div class="faq">
+      <details><summary>Does pickture cost anything?</summary><p>No. pickture is free and without ads.</p></details>
+      <details><summary>Which streaming services are supported?</summary><p>All major services in over 100 countries – availability is provided by JustWatch.</p></details>
+      <details><summary>What happens to my data?</summary><p>Only what’s necessary is stored, no tracking, no ads. Details in the <a href="datenschutz/">privacy policy</a>.</p></details>
+    </div>
+    <p class="credit">Movie data: The Movie Database (TMDB) · Availability: JustWatch. pickture is not endorsed or certified by TMDB.</p>
   </section>
   <footer>
     <a href="./datenschutz/"><span lang="en">Privacy</span><span lang="de">Datenschutz</span></a>
