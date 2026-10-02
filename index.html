@@ -1,33 +1,54 @@
 <!doctype html>
-<html lang="de">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>pickture – Filme &amp; Serien finden</title>
 <link rel="icon" href="./icon.png">
 <link rel="stylesheet" href="./style.css">
+<script>(function () {
+  var codes = ["en","de"];
+  var pick = function (c) { c = (c || '').toLowerCase().split('-')[0]; return codes.indexOf(c) >= 0 ? c : null; };
+  var saved = null;
+  try { saved = localStorage.getItem('lang'); } catch (e) {}
+  var fromUrl = pick(new URLSearchParams(location.search).get('lang'));
+  var lang = fromUrl || pick(saved) || (navigator.languages || [navigator.language]).map(pick).filter(Boolean)[0] || 'en';
+  document.documentElement.lang = lang;
+  document.documentElement.setAttribute('data-lang', lang);
+  window.setLang = function (c) {
+    document.documentElement.lang = c;
+    document.documentElement.setAttribute('data-lang', c);
+    try { localStorage.setItem('lang', c); } catch (e) {}
+  };
+  document.addEventListener('DOMContentLoaded', function () {
+    var s = document.getElementById('lang');
+    if (s) s.value = lang;
+  });
+})();</script>
 </head>
 <body>
 <main>
   <header>
     <a class="brand" href="./"><img src="./icon.png" alt="" width="36" height="36"><span>pick<b>ture</b></span></a>
-    <nav><a href="#de">Deutsch</a><a href="#en">English</a></nav>
+    <label class="lang"><span class="sr">Language</span>
+      <select id="lang" onchange="setLang(this.value)" aria-label="Language / Sprache"><option value="en">English</option><option value="de">Deutsch</option></select>
+    </label>
   </header>
-  <section id="de" lang="de" class="hero">
+  <section lang="de" class="hero">
     <h1>Was schauen wir heute?</h1>
     <p class="lead">pickture empfiehlt dir Filme und Serien – nur von den Streamingdiensten, die du wirklich hast. Bewerte, was du gesehen hast, folge Freunden und findet per Swipe in der Lobby gemeinsam heraus, was ihr schaut.</p>
     <p class="soon">Bald im App Store und bei Google Play.</p>
   </section>
-  <section id="en" lang="en" class="hero">
+  <section lang="en" class="hero">
     <h1>What are we watching tonight?</h1>
     <p class="lead">pickture recommends movies and shows – only from the streaming services you actually have. Rate what you’ve watched, follow friends and swipe together in a lobby to decide what to watch.</p>
     <p class="soon">Coming soon to the App Store and Google Play.</p>
   </section>
   <footer>
-    <a href="./datenschutz/">Datenschutz</a>
-    <a href="./nutzungsbedingungen/">Nutzungsbedingungen</a>
+    <a href="./datenschutz/"><span lang="en">Privacy</span><span lang="de">Datenschutz</span></a>
+    <a href="./nutzungsbedingungen/"><span lang="en">Terms of Use</span><span lang="de">Nutzungsbedingungen</span></a>
     <a href="./support/">Support</a>
-    <a href="./konto-loeschen/">Konto löschen</a>
+    <a href="./konto-loeschen/"><span lang="en">Delete account</span><span lang="de">Konto löschen</span></a>
   </footer>
 </main>
 </body>

@@ -7,13 +7,15 @@ header { display: flex; align-items: center; justify-content: space-between; gap
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 24px; letter-spacing: -0.5px; color: var(--text); text-decoration: none; }
 .brand img { border-radius: 9px; }
 .brand b { color: var(--accent); font-weight: 800; }
-nav a, footer a, a { color: var(--accent); }
-nav a { text-decoration: none; font-weight: 600; margin-left: 14px; }
+footer a, a { color: var(--accent); }
 h1 { font-size: 32px; letter-spacing: -0.5px; line-height: 1.15; margin: 36px 0 6px; }
 h2 { font-size: 18px; margin: 28px 0 6px; }
 p { margin: 8px 0; }
 .updated { color: var(--sub); font-size: 14px; }
 .hero .lead { font-size: 19px; color: var(--sub); }
 .soon { font-weight: 700; }
-section + section { margin-top: 56px; padding-top: 8px; border-top: 1px solid var(--line); }
+html[data-lang="en"] main [lang]:not([lang="en"]),
+html[data-lang="de"] main [lang]:not([lang="de"]) { display: none; }
+.lang select { font: inherit; font-size: 15px; font-weight: 600; color: var(--text); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 6px 10px; cursor: pointer; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 18px; font-size: 14px; }

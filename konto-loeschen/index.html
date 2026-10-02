@@ -1,19 +1,40 @@
 <!doctype html>
-<html lang="de">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>pickture – Konto löschen / Delete account</title>
 <link rel="icon" href="../icon.png">
 <link rel="stylesheet" href="../style.css">
+<script>(function () {
+  var codes = ["en","de"];
+  var pick = function (c) { c = (c || '').toLowerCase().split('-')[0]; return codes.indexOf(c) >= 0 ? c : null; };
+  var saved = null;
+  try { saved = localStorage.getItem('lang'); } catch (e) {}
+  var fromUrl = pick(new URLSearchParams(location.search).get('lang'));
+  var lang = fromUrl || pick(saved) || (navigator.languages || [navigator.language]).map(pick).filter(Boolean)[0] || 'en';
+  document.documentElement.lang = lang;
+  document.documentElement.setAttribute('data-lang', lang);
+  window.setLang = function (c) {
+    document.documentElement.lang = c;
+    document.documentElement.setAttribute('data-lang', c);
+    try { localStorage.setItem('lang', c); } catch (e) {}
+  };
+  document.addEventListener('DOMContentLoaded', function () {
+    var s = document.getElementById('lang');
+    if (s) s.value = lang;
+  });
+})();</script>
 </head>
 <body>
 <main>
   <header>
     <a class="brand" href="../"><img src="../icon.png" alt="" width="36" height="36"><span>pick<b>ture</b></span></a>
-    <nav><a href="#de">Deutsch</a><a href="#en">English</a></nav>
+    <label class="lang"><span class="sr">Language</span>
+      <select id="lang" onchange="setLang(this.value)" aria-label="Language / Sprache"><option value="en">English</option><option value="de">Deutsch</option></select>
+    </label>
   </header>
-  <section id="de" lang="de">
+  <section lang="de">
     <h1>Konto löschen</h1>
     <h2>In der App (sofort)</h2>
     <p>Öffne pickture → <strong>Profil</strong> → Zahnrad oben rechts → <strong>Konto löschen</strong> → bestätigen.</p>
@@ -22,7 +43,7 @@
     <h2>Was gelöscht wird</h2>
     <p>Dein Konto, Profil (Name, Benutzername, Profilbild), Bewertungen, Merkliste, Freundschaften, Lieblingsstars, Lobby-Daten, Meldungen und Geräte-Tokens für Benachrichtigungen – vollständig und endgültig. Es werden keine Daten aufbewahrt.</p>
   </section>
-  <section id="en" lang="en">
+  <section lang="en">
     <h1>Delete account</h1>
     <h2>In the app (immediately)</h2>
     <p>Open pickture → <strong>Profile</strong> → gear icon in the top right → <strong>Delete account</strong> → confirm.</p>
@@ -32,10 +53,10 @@
     <p>Your account, profile (name, username, profile picture), ratings, watchlist, friendships, favorite stars, lobby data, reports and notification device tokens – completely and permanently. No data is retained.</p>
   </section>
   <footer>
-    <a href="../datenschutz/">Datenschutz</a>
-    <a href="../nutzungsbedingungen/">Nutzungsbedingungen</a>
+    <a href="../datenschutz/"><span lang="en">Privacy</span><span lang="de">Datenschutz</span></a>
+    <a href="../nutzungsbedingungen/"><span lang="en">Terms of Use</span><span lang="de">Nutzungsbedingungen</span></a>
     <a href="../support/">Support</a>
-    <a href="../konto-loeschen/">Konto löschen</a>
+    <a href="../konto-loeschen/"><span lang="en">Delete account</span><span lang="de">Konto löschen</span></a>
   </footer>
 </main>
 </body>

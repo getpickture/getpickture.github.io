@@ -1,19 +1,40 @@
 <!doctype html>
-<html lang="de">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>pickture – Nutzungsbedingungen / Terms of Use</title>
 <link rel="icon" href="../icon.png">
 <link rel="stylesheet" href="../style.css">
+<script>(function () {
+  var codes = ["en","de"];
+  var pick = function (c) { c = (c || '').toLowerCase().split('-')[0]; return codes.indexOf(c) >= 0 ? c : null; };
+  var saved = null;
+  try { saved = localStorage.getItem('lang'); } catch (e) {}
+  var fromUrl = pick(new URLSearchParams(location.search).get('lang'));
+  var lang = fromUrl || pick(saved) || (navigator.languages || [navigator.language]).map(pick).filter(Boolean)[0] || 'en';
+  document.documentElement.lang = lang;
+  document.documentElement.setAttribute('data-lang', lang);
+  window.setLang = function (c) {
+    document.documentElement.lang = c;
+    document.documentElement.setAttribute('data-lang', c);
+    try { localStorage.setItem('lang', c); } catch (e) {}
+  };
+  document.addEventListener('DOMContentLoaded', function () {
+    var s = document.getElementById('lang');
+    if (s) s.value = lang;
+  });
+})();</script>
 </head>
 <body>
 <main>
   <header>
     <a class="brand" href="../"><img src="../icon.png" alt="" width="36" height="36"><span>pick<b>ture</b></span></a>
-    <nav><a href="#de">Deutsch</a><a href="#en">English</a></nav>
+    <label class="lang"><span class="sr">Language</span>
+      <select id="lang" onchange="setLang(this.value)" aria-label="Language / Sprache"><option value="en">English</option><option value="de">Deutsch</option></select>
+    </label>
   </header>
-  <section id="de" lang="de">
+  <section lang="de">
     <h1>Nutzungsbedingungen</h1>
     <p class="updated">Stand: 2. Oktober 2026</p>
     <h2>1. Worum es geht</h2>
@@ -42,7 +63,7 @@
     <h2>8. Schlussbestimmungen</h2>
     <p>Es gilt deutsches Recht. Zwingende Verbraucherschutzvorschriften deines Wohnsitzlandes bleiben unberührt.</p>
   </section>
-  <section id="en" lang="en">
+  <section lang="en">
     <h1>Terms of Use</h1>
     <p class="updated">Last updated: October 2, 2026</p>
     <h2>1. What this is about</h2>
@@ -72,10 +93,10 @@
     <p>German law applies. Mandatory consumer protection rules of your country of residence remain unaffected.</p>
   </section>
   <footer>
-    <a href="../datenschutz/">Datenschutz</a>
-    <a href="../nutzungsbedingungen/">Nutzungsbedingungen</a>
+    <a href="../datenschutz/"><span lang="en">Privacy</span><span lang="de">Datenschutz</span></a>
+    <a href="../nutzungsbedingungen/"><span lang="en">Terms of Use</span><span lang="de">Nutzungsbedingungen</span></a>
     <a href="../support/">Support</a>
-    <a href="../konto-loeschen/">Konto löschen</a>
+    <a href="../konto-loeschen/"><span lang="en">Delete account</span><span lang="de">Konto löschen</span></a>
   </footer>
 </main>
 </body>
