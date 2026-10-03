@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny-ps" viewBox="0 0 1024 1024">
+  <title>pickture</title>
+  <rect width="1024" height="1024" fill="#6D5DFC"/>
+  <rect x="320.5" y="238" width="335" height="500" rx="58" ry="58" fill="#A39BFE" transform="rotate(-14 488 488)"/>
+  <rect x="396" y="292" width="335" height="500" rx="58" ry="58" fill="#FFFFFF" transform="rotate(8 563.5 542)"/>
+  <path d="M528 452 L640 551 L505 619 Z" fill="#6D5DFC" stroke="#6D5DFC" stroke-width="36" stroke-linejoin="round"/>
+</svg>
