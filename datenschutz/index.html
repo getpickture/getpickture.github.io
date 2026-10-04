@@ -24,6 +24,7 @@
     document.documentElement.lang = c;
     document.documentElement.setAttribute('data-lang', c);
     try { localStorage.setItem('lang', c); } catch (e) {}
+    var u = new URL(location.href); u.searchParams.set('lang', c); history.replaceState(null, '', u);
   };
   document.addEventListener('DOMContentLoaded', function () {
     var s = document.getElementById('lang');
