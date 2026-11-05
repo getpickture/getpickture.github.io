@@ -79,6 +79,13 @@ h2.center { text-align: center; font-size: clamp(26px, 3.4vw, 36px); letter-spac
 }
 @media (min-width: 821px) and (max-width: 1000px) { .features { grid-template-columns: repeat(2, 1fr); } }
 .soon-note { color: var(--sub); font-size: 14px; margin: 14px 0 0; }
+.hero-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.ig-btn { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 14px; background: var(--card); color: var(--text); transition: opacity .15s ease, transform .15s ease; }
+.ig-btn:hover { opacity: .8; transform: translateY(-1px); }
+.ig-btn svg { width: 24px; height: 24px; display: block; }
+footer a.ig { display: inline-flex; align-items: center; gap: 6px; }
+footer a.ig svg { width: 15px; height: 15px; display: block; }
+@media (max-width: 820px) { .hero-actions { justify-content: center; } }
 
 /* ---------- Testversion ---------- */
 .store-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 380px; }
